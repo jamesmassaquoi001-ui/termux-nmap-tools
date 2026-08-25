@@ -1,2 +1,44 @@
 # termux-nmap-tools
 Nmap wrapper and network scanning tools for Termux - simplified port scanning and network reconnaissance
+
+# Basic port scan
+python main.py scan start 192.168.1.1
+
+# Service detection
+python main.py scan start 192.168.1.1 -sV
+
+# OS detection
+python main.py scan start 192.168.1.1 -O
+
+# Aggressive scan (all techniques)
+python main.py scan start 192.168.1.1 -A
+
+# Network discovery
+python main.py discover hosts 192.168.1.0/24
+
+# View scan report
+python main.py report view results/scan_results.xml
+
+
+termux-nmap-tools/
+├── main.py                 # Entry point
+├── nmap/
+│   ├── scanner.py         # Core nmap wrapper
+│   └── parser.py          # XML result parser
+├── cli/
+│   ├── scan.py            # Scan commands
+│   ├── discover.py        # Discovery commands
+│   └── report.py          # Report generation
+├── requirements.txt       # Python dependencies
+├── README.md             # Full documentation
+└── .env.example          # Configuration template
+# Clone and setup
+git clone https://github.com/jamesmassaquoi001-ui/termux-nmap-tools.git
+cd termux-nmap-tools
+
+# Install
+pkg install nmap python
+pip install -r requirements.txt
+
+# Run
+python main.py scan start 192.168.1.1
