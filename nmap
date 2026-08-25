@@ -1,3 +1,4 @@
+
 # Basic port scan
 python main.py scan start 192.168.1.1
 
@@ -29,3 +30,13 @@ termux-nmap-tools/
 ├── requirements.txt       # Python dependencies
 ├── README.md             # Full documentation
 └── .env.example          # Configuration template
+# Clone and setup
+git clone https://github.com/jamesmassaquoi001-ui/termux-nmap-tools.git
+cd termux-nmap-tools
+
+# Install
+pkg install nmap python
+pip install -r requirements.txt
+
+# Run
+python main.py scan start 192.168.1.1
