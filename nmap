@@ -15,3 +15,17 @@ python main.py discover hosts 192.168.1.0/24
 
 # View scan report
 python main.py report view results/scan_results.xml
+
+
+termux-nmap-tools/
+├── main.py                 # Entry point
+├── nmap/
+│   ├── scanner.py         # Core nmap wrapper
+│   └── parser.py          # XML result parser
+├── cli/
+│   ├── scan.py            # Scan commands
+│   ├── discover.py        # Discovery commands
+│   └── report.py          # Report generation
+├── requirements.txt       # Python dependencies
+├── README.md             # Full documentation
+└── .env.example          # Configuration template
